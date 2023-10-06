@@ -1,6 +1,7 @@
 /*
  * Copyright 2020, Data61, CSIRO (ABN 41 687 119 230)
  * Copyright 2021, HENSOLDT Cyber
+ * Coptright 2023, IBM
  *
  * SPDX-License-Identifier: GPL-2.0-only
  *
@@ -13,6 +14,7 @@
 /* This is a check that prevents using this driver blindly. Extend the list if
  * this driver is confirmed to be working on other platforms. */
 #if !defined(CONFIG_PLAT_HIFIVE) && \
+    !defined(CONFIG_PLAT_STARFIVE) && \
     !defined(CONFIG_PLAT_POLARFIRE) && \
     !defined(CONFIG_PLAT_QEMU_RISCV_VIRT) && \
     !defined(CONFIG_PLAT_ROCKETCHIP_ZCU102)
@@ -52,7 +54,7 @@
 
 #define PLIC_NUM_INTERRUPTS PLIC_MAX_IRQ
 
-#if defined(CONFIG_PLAT_HIFIVE) || defined(CONFIG_PLAT_POLARFIRE)
+#if defined(CONFIG_PLAT_HIFIVE) || defined(CONFIG_PLAT_POLARFIRE) || defined(CONFIG_PLAT_STARFIVE)
 
 /* SiFive U54-MC has 5 cores, and the first core does not
  * have supervisor mode. Therefore, we need to compensate
