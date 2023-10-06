@@ -1,0 +1,725 @@
+/* Copyright (c) 2023, IBM */
+/* SPDX-License-Identifier: GPL-2.0-only */
+
+/dts-v1/;
+
+/ {
+        compatible = "starfive,visionfive-2-v1.3b", "starfive,jh7110";
+        #address-cells = <0x02>;
+        #size-cells = <0x02>;
+        model = "StarFive VisionFive 2 v1.3B";
+
+        cpus {
+                #address-cells = <0x01>;
+                #size-cells = <0x00>;
+                timebase-frequency = "\0=\t";
+
+                cpu@0 {
+                        compatible = "sifive,s7", "riscv";
+                        reg = <0x00>;
+                        device_type = "cpu";
+                        i-cache-block-size = <0x40>;
+                        i-cache-sets = <0x40>;
+                        i-cache-size = <0x4000>;
+                        next-level-cache = <0x01>;
+                        riscv,isa = "rv64imac_zba_zbb";
+                        status = "disabled";
+                        phandle = <0x05>;
+
+                        interrupt-controller {
+                                compatible = "riscv,cpu-intc";
+                                interrupt-controller;
+                                #interrupt-cells = <0x01>;
+                                phandle = <0x0b>;
+                        };
+                };
+
+                cpu@1 {
+                        compatible = "sifive,u74-mc", "riscv";
+                        reg = <0x01>;
+                        d-cache-block-size = <0x40>;
+                        d-cache-sets = <0x40>;
+                        d-cache-size = <0x8000>;
+                        d-tlb-sets = <0x01>;
+                        d-tlb-size = <0x28>;
+                        device_type = "cpu";
+                        i-cache-block-size = <0x40>;
+                        i-cache-sets = <0x40>;
+                        i-cache-size = <0x8000>;
+                        i-tlb-sets = <0x01>;
+                        i-tlb-size = <0x28>;
+                        mmu-type = "riscv,sv39";
+                        next-level-cache = <0x01>;
+                        riscv,isa = "rv64imafdc_zba_zbb";
+                        tlb-split;
+                        operating-points-v2 = <0x02>;
+                        clocks = <0x03 0x01>;
+                        clock-names = "cpu";
+                        cpu-supply = <0x04>;
+                        phandle = <0x06>;
+
+                        interrupt-controller {
+                                compatible = "riscv,cpu-intc";
+                                interrupt-controller;
+                                #interrupt-cells = <0x01>;
+                                phandle = <0x0c>;
+                        };
+                };
+
+                cpu@2 {
+                        compatible = "sifive,u74-mc", "riscv";
+                        reg = <0x02>;
+                        d-cache-block-size = <0x40>;
+                        d-cache-sets = <0x40>;
+                        d-cache-size = <0x8000>;
+                        d-tlb-sets = <0x01>;
+                        d-tlb-size = <0x28>;
+                        device_type = "cpu";
+                        i-cache-block-size = <0x40>;
+                        i-cache-sets = <0x40>;
+                        i-cache-size = <0x8000>;
+                        i-tlb-sets = <0x01>;
+                        i-tlb-size = <0x28>;
+                        mmu-type = "riscv,sv39";
+                        next-level-cache = <0x01>;
+                        riscv,isa = "rv64imafdc_zba_zbb";
+                        tlb-split;
+                        operating-points-v2 = <0x02>;
+                        clocks = <0x03 0x01>;
+                        clock-names = "cpu";
+                        cpu-supply = <0x04>;
+                        phandle = <0x07>;
+
+                        interrupt-controller {
+                                compatible = "riscv,cpu-intc";
+                                interrupt-controller;
+                                #interrupt-cells = <0x01>;
+                                phandle = <0x0d>;
+                        };
+                };
+
+                cpu@3 {
+                        compatible = "sifive,u74-mc", "riscv";
+                        reg = <0x03>;
+                        d-cache-block-size = <0x40>;
+                        d-cache-sets = <0x40>;
+                        d-cache-size = <0x8000>;
+                        d-tlb-sets = <0x01>;
+                        d-tlb-size = <0x28>;
+                        device_type = "cpu";
+                        i-cache-block-size = <0x40>;
+                        i-cache-sets = <0x40>;
+                        i-cache-size = <0x8000>;
+                        i-tlb-sets = <0x01>;
+                        i-tlb-size = <0x28>;
+                        mmu-type = "riscv,sv39";
+                        next-level-cache = <0x01>;
+                        riscv,isa = "rv64imafdc_zba_zbb";
+                        tlb-split;
+                        operating-points-v2 = <0x02>;
+                        clocks = <0x03 0x01>;
+                        clock-names = "cpu";
+                        cpu-supply = <0x04>;
+                        phandle = <0x08>;
+
+                        interrupt-controller {
+                                compatible = "riscv,cpu-intc";
+                                interrupt-controller;
+                                #interrupt-cells = <0x01>;
+                                phandle = <0x0e>;
+                        };
+                };
+
+                cpu@4 {
+                        compatible = "sifive,u74-mc", "riscv";
+                        reg = <0x04>;
+                        d-cache-block-size = <0x40>;
+                        d-cache-sets = <0x40>;
+                        d-cache-size = <0x8000>;
+                        d-tlb-sets = <0x01>;
+                        d-tlb-size = <0x28>;
+                        device_type = "cpu";
+                        i-cache-block-size = <0x40>;
+                        i-cache-sets = <0x40>;
+                        i-cache-size = <0x8000>;
+                        i-tlb-sets = <0x01>;
+                        i-tlb-size = <0x28>;
+                        mmu-type = "riscv,sv39";
+                        next-level-cache = <0x01>;
+                        riscv,isa = "rv64imafdc_zba_zbb";
+                        tlb-split;
+                        operating-points-v2 = <0x02>;
+                        clocks = <0x03 0x01>;
+                        clock-names = "cpu";
+                        cpu-supply = <0x04>;
+                        phandle = <0x09>;
+
+                        interrupt-controller {
+                                compatible = "riscv,cpu-intc";
+                                interrupt-controller;
+                                #interrupt-cells = <0x01>;
+                                phandle = <0x0f>;
+                        };
+                };
+
+                cpu-map {
+
+                        cluster0 {
+
+                                core0 {
+                                        cpu = <0x05>;
+                                };
+
+                                core1 {
+                                        cpu = <0x06>;
+                                };
+
+                                core2 {
+                                        cpu = <0x07>;
+                                };
+
+                                core3 {
+                                        cpu = <0x08>;
+                                };
+
+                                core4 {
+                                        cpu = <0x09>;
+                                };
+                        };
+                };
+        };
+
+        opp-table-0 {
+                compatible = "operating-points-v2";
+                opp-shared;
+                phandle = <0x02>;
+
+                opp-375000000 {
+                        opp-hz = <0x00 0x165a0bc0>;
+                        opp-microvolt = "\0\f5";
+                };
+
+                opp-500000000 {
+                        opp-hz = <0x00 0x1dcd6500>;
+                        opp-microvolt = "\0\f5";
+                };
+
+                opp-750000000 {
+                        opp-hz = <0x00 0x2cb41780>;
+                        opp-microvolt = "\0\f5";
+                };
+
+                opp-1500000000 {
+                        opp-hz = <0x00 0x59682f00>;
+                        opp-microvolt = <0xfde80>;
+                };
+        };
+
+        gmac0-rgmii-rxin-clock {
+                compatible = "fixed-clock";
+                clock-output-names = "gmac0_rgmii_rxin";
+                #clock-cells = <0x00>;
+                clock-frequency = <0x7735940>;
+                phandle = <0x1f>;
+        };
+
+        gmac0-rmii-refin-clock {
+                compatible = "fixed-clock";
+                clock-output-names = "gmac0_rmii_refin";
+                #clock-cells = <0x00>;
+                clock-frequency = <0x2faf080>;
+                phandle = <0x1e>;
+        };
+
+        gmac1-rgmii-rxin-clock {
+                compatible = "fixed-clock";
+                clock-output-names = "gmac1_rgmii_rxin";
+                #clock-cells = <0x00>;
+                clock-frequency = <0x7735940>;
+                phandle = <0x17>;
+        };
+
+        gmac1-rmii-refin-clock {
+                compatible = "fixed-clock";
+                clock-output-names = "gmac1_rmii_refin";
+                #clock-cells = <0x00>;
+                clock-frequency = <0x2faf080>;
+                phandle = <0x16>;
+        };
+
+        i2srx-bclk-ext-clock {
+                compatible = "fixed-clock";
+                clock-output-names = "i2srx_bclk_ext";
+                #clock-cells = <0x00>;
+                clock-frequency = <0xbb8000>;
+                phandle = <0x1a>;
+        };
+
+        i2srx-lrck-ext-clock {
+                compatible = "fixed-clock";
+                clock-output-names = "i2srx_lrck_ext";
+                #clock-cells = <0x00>;
+                clock-frequency = <0x2ee00>;
+                phandle = <0x1b>;
+        };
+
+        i2stx-bclk-ext-clock {
+                compatible = "fixed-clock";
+                clock-output-names = "i2stx_bclk_ext";
+                #clock-cells = <0x00>;
+                clock-frequency = <0xbb8000>;
+                phandle = <0x18>;
+        };
+
+        i2stx-lrck-ext-clock {
+                compatible = "fixed-clock";
+                clock-output-names = "i2stx_lrck_ext";
+                #clock-cells = <0x00>;
+                clock-frequency = <0x2ee00>;
+                phandle = <0x19>;
+        };
+
+        mclk-ext-clock {
+                compatible = "fixed-clock";
+                clock-output-names = "mclk_ext";
+                #clock-cells = <0x00>;
+                clock-frequency = <0xbb8000>;
+                phandle = <0x1d>;
+        };
+
+        oscillator {
+                compatible = "fixed-clock";
+                clock-output-names = "osc";
+                #clock-cells = <0x00>;
+                clock-frequency = <0x16e3600>;
+                phandle = <0x15>;
+        };
+
+        rtc-oscillator {
+                compatible = "fixed-clock";
+                clock-output-names = "rtc_osc";
+                #clock-cells = <0x00>;
+                clock-frequency = <0x8000>;
+                phandle = <0x20>;
+        };
+
+        tdm-ext-clock {
+                compatible = "fixed-clock";
+                clock-output-names = "tdm_ext";
+                #clock-cells = <0x00>;
+                clock-frequency = <0x2ee0000>;
+                phandle = <0x1c>;
+        };
+
+        soc {
+                compatible = "simple-bus";
+                interrupt-parent = <0x0a>;
+                #address-cells = <0x02>;
+                #size-cells = <0x02>;
+                ranges;
+
+                timer@2000000 {
+                        compatible = "starfive,jh7110-clint", "sifive,clint0";
+                        reg = <0x00 0x2000000 0x00 0x10000>;
+                        interrupts-extended = <0x0b 0x03 0x0b 0x07 0x0c 0x03 0x0c 0x07 0x0d 0x03 0x0d 0x07 0x0e 0x03 0x0e 0x07 0x0f 0x03 0x0f 0x07>;
+                };
+
+                cache-controller@2010000 {
+                        compatible = "starfive,jh7110-ccache", "sifive,ccache0", "cache";
+                        reg = <0x00 0x2010000 0x00 0x4000>;
+                        interrupts = <0x01 0x03 0x04 0x02>;
+                        cache-block-size = <0x40>;
+                        cache-level = <0x02>;
+                        cache-sets = <0x800>;
+                        cache-size = <0x200000>;
+                        cache-unified;
+                        phandle = <0x01>;
+                };
+
+                interrupt-controller@c000000 {
+                        compatible = "starfive,jh7110-plic", "sifive,plic-1.0.0", "riscv,plic0";
+                        reg = <0x00 0xc000000 0x00 0x4000000>;
+                        interrupts-extended = <0x0b 0x0b 0x0c 0x0b 0x0c 0x09 0x0d 0x0b 0x0d 0x09 0x0e 0x0b 0x0e 0x09 0x0f 0x0b 0x0f 0x09>;
+                        interrupt-controller;
+                        #interrupt-cells = <0x01>;
+                        #address-cells = <0x00>;
+                        riscv,ndev = <0x88>;
+                        phandle = <0x0a>;
+                };
+
+                serial@10000000 {
+                        compatible = "snps,dw-apb-uart";
+                        reg = <0x00 0x10000000 0x00 0x10000>;
+                        clocks = <0x03 0x92 0x03 0x91>;
+                        clock-names = "baudclk", "apb_pclk";
+                        resets = <0x03 0x53>;
+                        interrupts = <0x20>;
+                        reg-io-width = <0x04>;
+                        reg-shift = <0x02>;
+                        status = "okay";
+                        pinctrl-names = "default";
+                        pinctrl-0 = <0x10>;
+                };
+
+                serial@10010000 {
+                        compatible = "snps,dw-apb-uart";
+                        reg = <0x00 0x10010000 0x00 0x10000>;
+                        clocks = <0x03 0x94 0x03 0x93>;
+                        clock-names = "baudclk", "apb_pclk";
+                        resets = <0x03 0x55>;
+                        interrupts = <0x21>;
+                        reg-io-width = <0x04>;
+                        reg-shift = <0x02>;
+                        status = "disabled";
+                };
+
+                serial@10020000 {
+                        compatible = "snps,dw-apb-uart";
+                        reg = <0x00 0x10020000 0x00 0x10000>;
+                        clocks = <0x03 0x96 0x03 0x95>;
+                        clock-names = "baudclk", "apb_pclk";
+                        resets = <0x03 0x57>;
+                        interrupts = <0x22>;
+                        reg-io-width = <0x04>;
+                        reg-shift = <0x02>;
+                        status = "disabled";
+                };
+
+                i2c@10030000 {
+                        compatible = "snps,designware-i2c";
+                        reg = <0x00 0x10030000 0x00 0x10000>;
+                        clocks = <0x03 0x8a>;
+                        clock-names = "ref";
+                        resets = <0x03 0x4c>;
+                        interrupts = <0x23>;
+                        #address-cells = <0x01>;
+                        #size-cells = <0x00>;
+                        status = "okay";
+                        clock-frequency = <0x186a0>;
+                        i2c-sda-hold-time-ns = <0x12c>;
+                        i2c-sda-falling-time-ns = <0x1fe>;
+                        i2c-scl-falling-time-ns = <0x1fe>;
+                        pinctrl-names = "default";
+                        pinctrl-0 = <0x11>;
+                };
+
+                i2c@10040000 {
+                        compatible = "snps,designware-i2c";
+                        reg = <0x00 0x10040000 0x00 0x10000>;
+                        clocks = <0x03 0x8b>;
+                        clock-names = "ref";
+                        resets = <0x03 0x4d>;
+                        interrupts = <0x24>;
+                        #address-cells = <0x01>;
+                        #size-cells = <0x00>;
+                        status = "disabled";
+                };
+
+                i2c@10050000 {
+                        compatible = "snps,designware-i2c";
+                        reg = <0x00 0x10050000 0x00 0x10000>;
+                        clocks = <0x03 0x8c>;
+                        clock-names = "ref";
+                        resets = <0x03 0x4e>;
+                        interrupts = <0x25>;
+                        #address-cells = <0x01>;
+                        #size-cells = <0x00>;
+                        status = "okay";
+                        clock-frequency = <0x186a0>;
+                        i2c-sda-hold-time-ns = <0x12c>;
+                        i2c-sda-falling-time-ns = <0x1fe>;
+                        i2c-scl-falling-time-ns = <0x1fe>;
+                        pinctrl-names = "default";
+                        pinctrl-0 = <0x12>;
+                };
+
+                serial@12000000 {
+                        compatible = "snps,dw-apb-uart";
+                        reg = <0x00 0x12000000 0x00 0x10000>;
+                        clocks = <0x03 0x98 0x03 0x97>;
+                        clock-names = "baudclk", "apb_pclk";
+                        resets = <0x03 0x59>;
+                        interrupts = <0x2d>;
+                        reg-io-width = <0x04>;
+                        reg-shift = <0x02>;
+                        status = "disabled";
+                };
+
+                serial@12010000 {
+                        compatible = "snps,dw-apb-uart";
+                        reg = <0x00 0x12010000 0x00 0x10000>;
+                        clocks = <0x03 0x9a 0x03 0x99>;
+                        clock-names = "baudclk", "apb_pclk";
+                        resets = <0x03 0x5b>;
+                        interrupts = <0x2e>;
+                        reg-io-width = <0x04>;
+                        reg-shift = <0x02>;
+                        status = "disabled";
+                };
+
+                serial@12020000 {
+                        compatible = "snps,dw-apb-uart";
+                        reg = <0x00 0x12020000 0x00 0x10000>;
+                        clocks = <0x03 0x9c 0x03 0x9b>;
+                        clock-names = "baudclk", "apb_pclk";
+                        resets = <0x03 0x5d>;
+                        interrupts = <0x2f>;
+                        reg-io-width = <0x04>;
+                        reg-shift = <0x02>;
+                        status = "disabled";
+                };
+
+                i2c@12030000 {
+                        compatible = "snps,designware-i2c";
+                        reg = <0x00 0x12030000 0x00 0x10000>;
+                        clocks = <0x03 0x8d>;
+                        clock-names = "ref";
+                        resets = <0x03 0x4f>;
+                        interrupts = <0x30>;
+                        #address-cells = <0x01>;
+                        #size-cells = <0x00>;
+                        status = "disabled";
+                };
+
+                i2c@12040000 {
+                        compatible = "snps,designware-i2c";
+                        reg = <0x00 0x12040000 0x00 0x10000>;
+                        clocks = <0x03 0x8e>;
+                        clock-names = "ref";
+                        resets = <0x03 0x50>;
+                        interrupts = <0x31>;
+                        #address-cells = <0x01>;
+                        #size-cells = <0x00>;
+                        status = "disabled";
+                };
+
+                i2c@12050000 {
+                        compatible = "snps,designware-i2c";
+                        reg = <0x00 0x12050000 0x00 0x10000>;
+                        clocks = <0x03 0x8f>;
+                        clock-names = "ref";
+                        resets = <0x03 0x51>;
+                        interrupts = <0x32>;
+                        #address-cells = <0x01>;
+                        #size-cells = <0x00>;
+                        status = "okay";
+                        clock-frequency = <0x186a0>;
+                        i2c-sda-hold-time-ns = <0x12c>;
+                        i2c-sda-falling-time-ns = <0x1fe>;
+                        i2c-scl-falling-time-ns = <0x1fe>;
+                        pinctrl-names = "default";
+                        pinctrl-0 = <0x13>;
+
+                        pmic@36 {
+                                compatible = "x-powers,axp15060";
+                                reg = <0x36>;
+                                interrupts = <0x00>;
+                                interrupt-controller;
+                                #interrupt-cells = <0x01>;
+
+                                regulators {
+
+                                        dcdc2 {
+                                                regulator-always-on;
+                                                regulator-min-microvolt = <0x7a120>;
+                                                regulator-max-microvolt = <0x177fa0>;
+                                                regulator-name = "vdd-cpu";
+                                                phandle = <0x04>;
+                                        };
+                                };
+                        };
+                };
+
+                i2c@12060000 {
+                        compatible = "snps,designware-i2c";
+                        reg = <0x00 0x12060000 0x00 0x10000>;
+                        clocks = <0x03 0x90>;
+                        clock-names = "ref";
+                        resets = <0x03 0x52>;
+                        interrupts = <0x33>;
+                        #address-cells = <0x01>;
+                        #size-cells = <0x00>;
+                        status = "okay";
+                        clock-frequency = <0x186a0>;
+                        i2c-sda-hold-time-ns = <0x12c>;
+                        i2c-sda-falling-time-ns = <0x1fe>;
+                        i2c-scl-falling-time-ns = <0x1fe>;
+                        pinctrl-names = "default";
+                        pinctrl-0 = <0x14>;
+                };
+
+                clock-controller@13020000 {
+                        compatible = "starfive,jh7110-syscrg";
+                        reg = <0x00 0x13020000 0x00 0x10000>;
+                        clocks = <0x15 0x16 0x17 0x18 0x19 0x1a 0x1b 0x1c 0x1d>;
+                        clock-names = "osc", "gmac1_rmii_refin", "gmac1_rgmii_rxin", "i2stx_bclk_ext", "i2stx_lrck_ext", "i2srx_bclk_ext", "i2srx_lrck_ext", "tdm_ext", "mclk_ext";
+                        #clock-cells = <0x01>;
+                        #reset-cells = <0x01>;
+                        phandle = <0x03>;
+                };
+
+                pinctrl@13040000 {
+                        compatible = "starfive,jh7110-sys-pinctrl";
+                        reg = <0x00 0x13040000 0x00 0x10000>;
+                        clocks = <0x03 0x70>;
+                        resets = <0x03 0x02>;
+                        interrupts = <0x56>;
+                        interrupt-controller;
+                        #interrupt-cells = <0x02>;
+                        gpio-controller;
+                        #gpio-cells = <0x02>;
+                        phandle = <0x22>;
+
+                        i2c0-0 {
+                                phandle = <0x11>;
+
+                                i2c-pins {
+                                        pinmux = <0x9001439 0xa00183a>;
+                                        bias-disable;
+                                        input-enable;
+                                        input-schmitt-enable;
+                                };
+                        };
+
+                        i2c2-0 {
+                                phandle = <0x12>;
+
+                                i2c-pins {
+                                        pinmux = <0x3b007803 0x3c007c02>;
+                                        bias-disable;
+                                        input-enable;
+                                        input-schmitt-enable;
+                                };
+                        };
+
+                        i2c5-0 {
+                                phandle = <0x13>;
+
+                                i2c-pins {
+                                        pinmux = <0x4f00a813 0x5000ac14>;
+                                        bias-disable;
+                                        input-enable;
+                                        input-schmitt-enable;
+                                };
+                        };
+
+                        i2c6-0 {
+                                phandle = <0x14>;
+
+                                i2c-pins {
+                                        pinmux = <0x5600b810 0x5700bc11>;
+                                        bias-disable;
+                                        input-enable;
+                                        input-schmitt-enable;
+                                };
+                        };
+
+                        uart0-0 {
+                                phandle = <0x10>;
+
+                                tx-pins {
+                                        pinmux = <0xff140005>;
+                                        bias-disable;
+                                        drive-strength = <0x0c>;
+                                        input-disable;
+                                        input-schmitt-disable;
+                                        slew-rate = <0x00>;
+                                };
+
+                                rx-pins {
+                                        pinmux = <0xe000406>;
+                                        bias-disable;
+                                        drive-strength = <0x02>;
+                                        input-enable;
+                                        input-schmitt-enable;
+                                        slew-rate = <0x00>;
+                                };
+                        };
+                };
+
+                watchdog@13070000 {
+                        compatible = "starfive,jh7110-wdt";
+                        reg = <0x00 0x13070000 0x00 0x10000>;
+                        clocks = <0x03 0x7a 0x03 0x7b>;
+                        clock-names = "apb" ,"core";
+                        resets = <0x03 0x6d 0x03 0x6e>;
+                };
+
+                clock-controller@17000000 {
+                        compatible = "starfive,jh7110-aoncrg";
+                        reg = <0x00 0x17000000 0x00 0x10000>;
+                        clocks = <0x15 0x1e 0x1f 0x03 0x08 0x03 0x0b 0x03 0x6c 0x20>;
+                        clock-names = "osc", "gmac0_rmii_refin", "gmac0_rgmii_rxin", "stg_axiahb", "apb_bus", "gmac0_gtxclk", "rtc_osc";
+                        #clock-cells = <0x01>;
+                        #reset-cells = <0x01>;
+                        phandle = <0x21>;
+                };
+
+                pinctrl@17020000 {
+                        compatible = "starfive,jh7110-aon-pinctrl";
+                        reg = <0x00 0x17020000 0x00 0x10000>;
+                        resets = <0x21 0x02>;
+                        interrupts = <0x55>;
+                        interrupt-controller;
+                        #interrupt-cells = <0x02>;
+                        gpio-controller;
+                        #gpio-cells = <0x02>;
+                };
+
+                power-controller@17030000 {
+                        compatible = "starfive,jh7110-pmu";
+                        reg = <0x00 0x17030000 0x00 0x10000>;
+                        interrupts = <0x6f>;
+                        #power-domain-cells = <0x01>;
+                };
+
+                pwm@120d0000 {
+			compatible = "starfive,pwm", "sifive,pwm0";
+			reg-names = "control";
+			interrupt-parent = <0x0000000b>;
+      			interrupts = <0x0000002a 0x0000002b 0x0000002c 0x0000002d>;
+			reg = <0x0 0x120d0000 0x0 0x10000>;
+			clocks = <121>;
+			resets = <108>;
+			#pwm-cells = <3>;
+                        starfive,approx-freq = <2000000>;
+			status = "okay";
+		};
+
+                pwm@120d1000 {
+			compatible = "starfive,pwm", "sifive,pwm0";
+			reg-names = "control";
+			interrupt-parent = <0x0000000b>;
+      			interrupts = <0x0000002e 0x0000002f 0x00000030 0x00000031>;
+			reg = <0x0 0x120d1000 0x0 0x10000>;
+			clocks = <121>;
+			resets = <108>;
+			#pwm-cells = <3>;
+                        starfive,approx-freq = <2000000>;
+			status = "okay";
+		};
+        };
+
+        aliases {
+                i2c0 = "/soc/i2c@10030000";
+                i2c2 = "/soc/i2c@10050000";
+                i2c5 = "/soc/i2c@12050000";
+                i2c6 = "/soc/i2c@12060000";
+                serial0 = "/soc/serial@10000000";
+        };
+
+        chosen {
+                stdout-path = "serial0:115200n8";
+        };
+
+        memory@40000000 {
+                device_type = "memory";
+                reg = <0x00 0x40000000 0x01 0x00>;
+        };
+
+        gpio-restart {
+                compatible = "gpio-restart";
+                gpios = <0x22 0x23 0x00>;
+                priority = <0xe0>;
+        };
+};
