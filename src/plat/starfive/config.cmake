@@ -12,7 +12,7 @@ if(KernelPlatformStarfive)
     config_set(KernelRiscVPlatform RISCV_PLAT "starfive")
     config_set(KernelPlatformFirstHartID FIRST_HART_ID 1)
     config_set(KernelOpenSBIPlatform OPENSBI_PLATFORM "generic")
-    set(KernelRiscvUseClintMtime ON)
+    set(KernelRiscvUseClintMtime OFF)
     list(APPEND KernelDTSList "tools/dts/starfive.dts")
     list(APPEND KernelDTSList "src/plat/starfive/overlay-starfive.dts")
     declare_default_headers(
